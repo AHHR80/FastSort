@@ -20,6 +20,9 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+from time import perf_counter
+from random import randint, shuffle
+
 
 print('fast sort now')
 
@@ -51,11 +54,11 @@ class FastSort:
             elif array[mid] > x:
                 high = mid - 1
             else:
-                array[mid:mid] = [x]  # arr.insert(mid, x)
+                array[mid:mid] = [x]
                 len_arr += 1
                 return
         if len_arr > low:
-            array[low:low] = [x]  # arr.insert(low, x)  # arr.append(x)
+            array[low:low] = [x]
         else:
             array.append(x)
         len_arr += 1
